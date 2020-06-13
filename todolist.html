@@ -2,21 +2,26 @@
 <html>
     <head>
         <script>
-            function input() {
+            function input(){
+                
                 document.getElementById('submit').removeAttribute('disabled');
+                
             }
-            function submit(){
-
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelector('#todo-list').onsubmit = () => {
+                    if(document.getElementById('task').value.length != 0){
                     const li = document.createElement('li');
                     li.innerHTML = document.querySelector('#task').value;
 
                     document.querySelector('#list').append(li);
 
-                    // document.querySelector('#task').value = '';
+                    document.querySelector('#task').value = '';
 
+                    }
                     return false;
-            }
+                };
 
+            });
         </script>
         <title>PreIntern Group</title>
     </head>
@@ -24,9 +29,9 @@
         <h1>To Do List</h1>
         <ul id="list">
         </ul>
-        <form id="todo-list" onsubmit="submit()">
+        <form id="todo-list">
             <input id="task" autocomplete="off" autofocus placeholder="Add todo-task" type="text" oninput="input()">
-            <input type="submit" disabled="disabled" id="submit">
+            <input type="submit" id="submit" disabled='disabled'>
         </form>
     </body>
 </html>
