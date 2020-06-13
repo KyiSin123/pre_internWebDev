@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function change_color(){
+                var col = document.querySelector('#color').value;
+                document.querySelector('#cap').style.color = col;
+            }
+        </script>
+        <title>My Website</title>
+    </head>
+    <body>
+        <h1 id="cap">Hello, Welcome to Our PreIntern Group!</h1>
+        <select id="color" onchange="change_color()">
+            <option value="black">Black</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+        </select>
+    </body>
+</html>
